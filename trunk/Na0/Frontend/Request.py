@@ -4,7 +4,7 @@
 """Common request handler interface
 """
 
-__all__ = ['Request', 'CGIRequest']
+__all__ = ['Request', 'CGIRequest', 'process_request']
 __docformat__ = 'epytext'
 
 class Request:
@@ -20,20 +20,11 @@ class Request:
     host = ''               # Host
     user_agent = ''         # User-Agent
 
-    # common variable
+    # common variables
     remote_addr = ''        # client address
     request_uri = ''        # requested uri
     script_name = ''        # script path
 
-    def process(self, file):
-        """Processes the requests
-
-        @param file: file to output result
-        @type file: file-like object
-        """
-        file.write('Content-type: text/plain\r\n')
-        file.write('\r\n')
-        file.write('Hello, World!\r\n')
 
 class CGIRequest(Request):
     """A request class for CGI-like protocols"""
@@ -63,3 +54,25 @@ class CGIRequest(Request):
         self.remote_addr = env.get('REMOTE_ADDR', '')
         self.request_uri = env.get('REQUEST_URI', '')
         self.script_name = env.get('SCRIPT_NAME', '')
+
+
+import os.path
+def process_request(req, file):
+    """Processes the requests
+
+    @param req: request object
+    @type req: instance of L{Request} or its subclasses
+    @param file: file to output result
+    @type file: file-like object
+    """
+    base_url = '/na0/' # XXX: to configuration
+    if req.script_name.startswith(base_url):
+        reqparts = req.script_name[len(base_url):].split('/')
+    else:
+        put_simple_error(file, 'base url not set')
+        return
+
+    file.write('Content-type: text/plain\r\n')
+    file.write('\r\n')
+    file.write('Hello, %s!\r\n' % req.remote_addr)
+    file.write(repr(reqparts))

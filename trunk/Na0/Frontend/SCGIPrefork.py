@@ -26,7 +26,7 @@ class Na0SCGIHandler(scgi_server.SCGIHandler):
 
         env = self.read_env(input)
         req = Request.CGIRequest(env, input.read(int(env['CONTENT_LENGTH'])))
-        req.process(file=output)
+        Request.process_request(req, file=output)
 
         output.close()
         input.close()
