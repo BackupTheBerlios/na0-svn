@@ -1,9 +1,8 @@
-#
 # Na0/Frontend/SCGIPrefork.py
-#  - scgi frontend adapter
-#
 # $Id$
-#
+
+"""SCGI frontend adapter
+"""
 
 __all__ = ['Na0SCGIHandler']
 __docformat__ = 'epytext'

@@ -1,11 +1,10 @@
-#
 # Na0/Frontend/Request.py
-#  - common request handler interface
-#
 # $Id$
-#
 
-__all__ = ['CGIRequest']
+"""Common request handler interface
+"""
+
+__all__ = ['Request', 'CGIRequest']
 __docformat__ = 'epytext'
 
 class Request:
@@ -31,7 +30,7 @@ class CGIRequest(Request):
     """A request class for CGI-like protocols"""
 
     def __init__(self, env, content):
-        """Initializes L{Request} class
+        """Initializes L{CGIRequest} class
 
         @param env: CGI environment variables
         @type env: dict
