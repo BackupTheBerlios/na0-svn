@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# setup.py - NaYeong Setup
+# setup.py - Na Yeong Setup
 #
 # Copyright (C) 2004 Hye-Shik Chang <perky@FreeBSD.org>.
 # All rights reserved.
@@ -40,5 +40,6 @@ setup(
     author_email = "perky@FreeBSD.org",
     url = "http://na0.berlios.de/",
     license = "BSD Style",
-    packages = ['Na0'],
+    packages = ['Na0', 'Na0.Frontend', 'Na0.Web',
+                'Na0.Web.PageTemplates', 'Na0.Web.TAL', 'Na0.Web.ZTUtils'],
 )

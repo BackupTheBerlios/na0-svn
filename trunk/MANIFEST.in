@@ -1,0 +1,6 @@
+# $Id$
+
+include README AUTHORS LICENSE
+include MANIFEST.in
+
+global-exclude */.svn/* *.pyc *.pyo build/*/*
