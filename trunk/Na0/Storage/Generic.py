@@ -8,4 +8,12 @@ __all__ = []
 __docformat__ = 'epytext'
 
 class GenericStorage:
-    pass
+    """Interface for Na Yeong backend drivers."""
+
+    def __init__(self):
+        """Initializes the storage class."""
+        raise NotImplemented
+
+    def connect(self):
+        """Connects to storage."""
+        raise NotImplemented
