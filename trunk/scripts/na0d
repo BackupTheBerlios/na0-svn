@@ -34,4 +34,4 @@
 """
 
 from Na0.Scripts import na0d
-la0d.main()
+na0d.main()
