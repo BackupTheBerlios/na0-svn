@@ -7,6 +7,8 @@
 __all__ = ['Request', 'CGIRequest', 'process_request']
 __docformat__ = 'epytext'
 
+import os.path
+
 class Request:
     """A base request class that handles data that is incoming via
     HTTP or HTTP-like protocols"""
@@ -24,12 +26,13 @@ class Request:
     remote_addr = ''        # client address
     request_uri = ''        # requested uri
     script_name = ''        # script path
+    query = {}              # GET + POST variables
 
 
 class CGIRequest(Request):
     """A request class for CGI-like protocols"""
 
-    def __init__(self, env, content):
+    def __init__(self, env, file):
         """Initializes L{CGIRequest} class
 
         @param env: CGI environment variables
@@ -38,7 +41,7 @@ class CGIRequest(Request):
         @type content: str
         """
         self.env = env
-        self.content = content
+        self.file = file
         self.parse_env()
 
     def parse_env(self):
@@ -55,8 +58,15 @@ class CGIRequest(Request):
         self.request_uri = env.get('REQUEST_URI', '')
         self.script_name = env.get('SCRIPT_NAME', '')
 
+        import cgi
+        self.query = dict(cgi.parse(self.file, self.env))
 
-import os.path
+
+def fatal_error(file, message):
+    file.write('Content-type: text/plain\r\n')
+    file.write('\r\n')
+    file.write('Fatal error: %s\r\n' % message)
+
 def process_request(req, file):
     """Processes the requests
 
@@ -67,12 +77,11 @@ def process_request(req, file):
     """
     base_url = '/na0/' # XXX: to configuration
     if req.script_name.startswith(base_url):
-        reqparts = req.script_name[len(base_url):].split('/')
+        req.query['request_args'] = req.script_name[len(base_url):].split('/')
     else:
-        put_simple_error(file, 'base url not set')
+        fatal_error(file, 'base url not set')
         return
 
-    file.write('Content-type: text/plain\r\n')
-    file.write('\r\n')
-    file.write('Hello, %s!\r\n' % req.remote_addr)
-    file.write(repr(reqparts))
+    from Na0.Frontend import Actions
+    action = req.query.get('action', ['default'])[0]
+    Actions.do_action(file, action, req)
