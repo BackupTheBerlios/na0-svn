@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 #
-# setup.py - Na0 Setup
+# setup.py - NaYeong Setup
 #
 # Copyright (C) 2004 Hye-Shik Chang <perky@FreeBSD.org>.
 # All rights reserved.
@@ -33,7 +33,7 @@
 from distutils.core import setup, Extension
 
 setup(
-    name = "Na0",
+    name = "NaYeong",
     version = "0",
     description = "Complicated blogging base",
     author = "Hye-Shik Chang",
