@@ -1,4 +1,4 @@
-# Na0/Frontend/Request.py
+# Na0/Request.py
 # $Id$
 
 """Common request handler interface
@@ -82,6 +82,6 @@ def process_request(req, file):
         fatal_error(file, 'base url not set')
         return
 
-    from Na0.Frontend import Actions
+    from Na0 import Actions
     action = req.query.get('action', ['default'])[0]
     Actions.do_action(file, action, req)

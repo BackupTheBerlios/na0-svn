@@ -1,4 +1,4 @@
-# Na0/Frontend/Actions.py
+# Na0/Actions.py
 # $Id$
 
 """Common request handler interface

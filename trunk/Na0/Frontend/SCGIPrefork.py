@@ -9,7 +9,7 @@ __docformat__ = 'epytext'
 
 import sys
 from scgi import scgi_server
-from Na0.Frontend import Request
+from Na0 import Request
 
 class Na0SCGIHandler(scgi_server.SCGIHandler):
     """SCGI handler class adapter for NaYeong"""
