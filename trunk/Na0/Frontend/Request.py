@@ -25,6 +25,15 @@ class Request:
     request_uri = ''        # requested uri
     script_name = ''        # script path
 
+    def process(self, file):
+        """Processes the requests
+
+        @param file: file to output result
+        @type file: file-like object
+        """
+        file.write('Content-type: text/plain\r\n')
+        file.write('\r\n')
+        file.write('Hello, World!\r\n')
 
 class CGIRequest(Request):
     """A request class for CGI-like protocols"""
