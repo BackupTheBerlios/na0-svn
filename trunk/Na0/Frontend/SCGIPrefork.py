@@ -6,7 +6,7 @@
 #
 
 __all__ = ['Na0SCGIHandler']
-__docformat__ = 'epydoc'
+__docformat__ = 'epytext'
 
 import sys
 from scgi import scgi_server

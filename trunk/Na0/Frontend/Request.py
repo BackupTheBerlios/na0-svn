@@ -6,7 +6,7 @@
 #
 
 __all__ = ['CGIRequest']
-__docformat__ = 'epydoc'
+__docformat__ = 'epytext'
 
 class Request:
     """A base request class that handles data that is incoming via
