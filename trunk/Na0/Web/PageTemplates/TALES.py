@@ -12,7 +12,7 @@
 ##############################################################################
 # Modified for Roundup:
 # 
-# 1. changed imports to import from roundup.cgi
+# 1. changed imports to import from Na0.Web
 # 2. implemented ustr as str (removes import from DocumentTemplate)
 # 3. removed import and use of Unauthorized from zExceptions
 """TALES
@@ -23,7 +23,7 @@ An implementation of a generic TALES engine
 __version__='$Revision: 1.9 $'[11:-2]
 
 import re, sys
-from roundup.cgi import ZTUtils
+from Na0.Web import ZTUtils
 from weakref import ref
 from MultiMapping import MultiMapping
 from GlobalTranslationService import getGlobalTranslationService

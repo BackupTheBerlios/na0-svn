@@ -17,8 +17,8 @@ __version__ = "$Revision: 1.1 $"[11:-2]
 __date__ = "$Date: 2004/07/11 14:17:17 $"[7:-2]
 
 from roundup import i18n
-from roundup.cgi.PageTemplates import Expressions, PathIterator, TALES
-from roundup.cgi.TAL import TALInterpreter
+from Na0.Web.PageTemplates import Expressions, PathIterator, TALES
+from Na0.Web.TAL import TALInterpreter
 
 ### Translation classes
 

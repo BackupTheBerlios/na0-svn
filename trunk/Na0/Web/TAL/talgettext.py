@@ -37,11 +37,11 @@ import time
 import getopt
 import traceback
 
-from roundup.cgi.TAL.HTMLTALParser import HTMLTALParser
-from roundup.cgi.TAL.TALInterpreter import TALInterpreter
-from roundup.cgi.TAL.DummyEngine import DummyEngine
+from Na0.Web.TAL.HTMLTALParser import HTMLTALParser
+from Na0.Web.TAL.TALInterpreter import TALInterpreter
+from Na0.Web.TAL.DummyEngine import DummyEngine
 #from ITALES import ITALESEngine
-from roundup.cgi.TAL.TALDefs import TALESError
+from Na0.Web.TAL.TALDefs import TALESError
 
 __version__ = '$Revision: 1.5 $'
 

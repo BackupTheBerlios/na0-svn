@@ -10,10 +10,10 @@ import codecs
 
 
 from roundup import roundupdb, date, hyperdb, password
-from roundup.cgi import templating, cgitb, TranslationService
-from roundup.cgi.actions import *
-from roundup.cgi.exceptions import *
-from roundup.cgi.form_parser import FormParser
+from Na0.Web import templating, cgitb, TranslationService
+from Na0.Web.actions import *
+from Na0.Web.exceptions import *
+from Na0.Web.form_parser import FormParser
 from roundup.mailer import Mailer, MessageSendError
 
 def initialiseSecurity(security):

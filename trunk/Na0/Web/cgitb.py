@@ -10,7 +10,7 @@ __docformat__ = 'restructuredtext'
 import sys, os, types, string, keyword, linecache, tokenize, inspect, cgi
 import pydoc, traceback
 
-from roundup.cgi import templating, TranslationService
+from Na0.Web import templating, TranslationService
 
 def get_translator(i18n=None):
     """Return message translation function (gettext)
@@ -51,7 +51,7 @@ def pt_html(context=5, i18n=None):
             '<p class="help">Debugging information follows</p>'
          ) % {'exc_type': exc_info[0], 'exc_value': exc_info[1]},
          '<ol>',]
-    from roundup.cgi.PageTemplates.Expressions import TraversalError
+    from Na0.Web.PageTemplates.Expressions import TraversalError
     t = inspect.trace(context)
     t.reverse()
     for frame, file, lnum, func, lines, index in t:

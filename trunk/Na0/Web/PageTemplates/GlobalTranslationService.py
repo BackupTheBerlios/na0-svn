@@ -13,7 +13,7 @@
 ##############################################################################
 # Modifications for Roundup:
 # 1. implemented ustr as str
-# 2. make imports use roundup.cgi
+# 2. make imports use Na0.Web
 """Global Translation Service for providing I18n to Page Templates.
 
 $Id: GlobalTranslationService.py,v 1.4 2004/05/29 00:08:07 a1s Exp $
@@ -21,7 +21,7 @@ $Id: GlobalTranslationService.py,v 1.4 2004/05/29 00:08:07 a1s Exp $
 
 import re
 
-from roundup.cgi.TAL.TALDefs import NAME_RE
+from Na0.Web.TAL.TALDefs import NAME_RE
 
 ustr = str
 

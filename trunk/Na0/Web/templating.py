@@ -39,10 +39,10 @@ except ImportError:
     StructuredText = None
 
 # bring in the templating support
-from roundup.cgi.PageTemplates import PageTemplate, GlobalTranslationService
-from roundup.cgi.PageTemplates.Expressions import getEngine
-from roundup.cgi.TAL import TALInterpreter
-from roundup.cgi import TranslationService, ZTUtils
+from Na0.Web.PageTemplates import PageTemplate, GlobalTranslationService
+from Na0.Web.PageTemplates.Expressions import getEngine
+from Na0.Web.TAL import TALInterpreter
+from Na0.Web import TranslationService, ZTUtils
 
 ### i18n services
 # this global translation service is not thread-safe.

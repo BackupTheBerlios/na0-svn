@@ -4,8 +4,8 @@ import re, cgi, StringIO, urllib, Cookie, time, random
 
 from roundup import hyperdb, token, date, password, rcsv, exceptions
 from roundup.i18n import _
-from roundup.cgi import templating
-from roundup.cgi.exceptions import Redirect, Unauthorised, SeriousError
+from Na0.Web import templating
+from Na0.Web.exceptions import Redirect, Unauthorised, SeriousError
 from roundup.mailgw import uidFromAddress
 
 __all__ = ['Action', 'ShowAction', 'RetireAction', 'SearchAction',

@@ -1,8 +1,8 @@
 import re, mimetypes
 
 from roundup import hyperdb, date, password
-from roundup.cgi import templating
-from roundup.cgi.exceptions import FormError
+from Na0.Web import templating
+from Na0.Web.exceptions import FormError
 
 class FormParser:
     # edit form variable handling (see unit tests)

@@ -12,7 +12,7 @@
 ##############################################################################
 # Modified for Roundup:
 # 
-# 1. changed imports to import from roundup.cgi
+# 1. changed imports to import from Na0.Web
 # 2. removed use of ExtensionClass
 # 3. removed use of ComputedAttribute
 """Page Template module
@@ -24,11 +24,11 @@ __version__='$Revision: 1.5 $'[11:-2]
 
 import sys
 
-from roundup.cgi.TAL.TALParser import TALParser
-from roundup.cgi.TAL.HTMLTALParser import HTMLTALParser
-from roundup.cgi.TAL.TALGenerator import TALGenerator
+from Na0.Web.TAL.TALParser import TALParser
+from Na0.Web.TAL.HTMLTALParser import HTMLTALParser
+from Na0.Web.TAL.TALGenerator import TALGenerator
 # Do not use cStringIO here!  It's not unicode aware. :(
-from roundup.cgi.TAL.TALInterpreter import TALInterpreter, FasterStringIO
+from Na0.Web.TAL.TALInterpreter import TALInterpreter, FasterStringIO
 from Expressions import getEngine
 
 
