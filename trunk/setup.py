@@ -40,5 +40,5 @@ setup(
     author_email = "perky@FreeBSD.org",
     url = "http://na0.berlios.de/",
     license = "BSD Style",
-    packages = ['Na0', 'Na0.Frontend'],
+    packages = ['Na0', 'Na0.Frontend', 'Na0.Storage'],
 )
